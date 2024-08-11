@@ -20,7 +20,7 @@ const newUrl = new URL(复制的邀请链接)
 newUrl.searchParams.set('SDKAPPID', SDKAPPID)
 newUrl.searchParams.set('SDKSECRETKEY', SDKSECRETKEY)
 console.log(newUrl.toString())
-navigator.clipboard.writeText(newUrl.toString())
+setTimeout(()=> navigator.clipboard.writeText(newUrl.toString()), 3000)
 ```
 
 ---
