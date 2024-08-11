@@ -2,6 +2,26 @@
 
 修改版，在线填写参数直接试用
 
+改动点：https://github.com/eric-gitta-moore/TUIRoomKit/blob/a0e5d8ec8b08ce6e377a1ee6568696f9c4b73b6c/src/config/basic-info-config.js#L9
+
+```js
+const param = Object.fromEntries(new URL(location.href).searchParams.entries())
+const storage = {
+  SDKAPPID: Number(param['SDKAPPID'] || localStorage.getItem('SDKAPPID')),
+  SDKSECRETKEY: param['SDKSECRETKEY'] || localStorage.getItem('SDKSECRETKEY'),
+}
+
+if (!storage.SDKAPPID || !storage.SDKSECRETKEY) {
+  const SDKAPPID = prompt('SDKAPPID')
+  const SDKSECRETKEY = prompt('SDKSECRETKEY')
+  if (SDKAPPID && SDKSECRETKEY) {
+    storage.SDKAPPID = Number(SDKAPPID)
+    storage.SDKSECRETKEY = SDKSECRETKEY
+    localStorage.setItem('SDKAPPID', storage.SDKAPPID)
+    localStorage.setItem('SDKSECRETKEY', storage.SDKSECRETKEY)
+  }
+}
+```
 
 ---
 
