@@ -27,6 +27,9 @@ setTimeout(()=>{
 ```
 
 ---
+deprecated，发现一个更好用的，Microsoft teams，只需要咸鱼搞个家庭版就可以开不限时会议了，而且也可以 web 接入
+
+---
 
 # Quick Run of TUIRoomKit Web Demo
 
