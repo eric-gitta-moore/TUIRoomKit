@@ -8,10 +8,13 @@
 
 快速生成链接，在控制台执行
 ```js
-const SDKAPPID = `SDKAPPID`
-const SDKSECRETKEY = `SDKSECRETKEY`
 const 复制的邀请链接 = `https://eric-gitta-moore.github.io/TUIRoomKit/#/home?roomId=205871`
 
+// 填写 SDKAPPID 或者下面这一行
+const 从url解析参数 = `https://eric-gitta-moore.github.io/TUIRoomKit/?SDKAPPID=xxx&SDKSECRETKEY=xxx#/room?roomId=205871`
+const urlParams = Object.fromEntries(new URL(从url解析参数).searchParams.entries())
+const SDKAPPID = urlParams['SDKAPPID'] || `111`
+const SDKSECRETKEY = urlParams['SDKSECRETKEY'] || `111`
 
 const newUrl = new URL(复制的邀请链接)
 newUrl.searchParams.set('SDKAPPID', SDKAPPID)
