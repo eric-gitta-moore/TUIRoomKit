@@ -23,6 +23,20 @@ if (!storage.SDKAPPID || !storage.SDKSECRETKEY) {
 }
 ```
 
+快速生成链接，在控制台执行
+```js
+const SDKAPPID = `SDKAPPID`
+const SDKSECRETKEY = `SDKSECRETKEY`
+const 复制的邀请链接 = `https://eric-gitta-moore.github.io/TUIRoomKit/#/home?roomId=205871`
+
+
+const newUrl = new URL(复制的邀请链接)
+newUrl.searchParams.set('SDKAPPID', SDKAPPID)
+newUrl.searchParams.set('SDKSECRETKEY', SDKSECRETKEY)
+console.log(newUrl.toString())
+navigator.clipboard.writeText(newUrl.toString())
+```
+
 ---
 
 # Quick Run of TUIRoomKit Web Demo
