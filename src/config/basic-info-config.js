@@ -10,16 +10,16 @@ const storage = {
   SDKSECRETKEY: param['SDKSECRETKEY'] || localStorage.getItem('SDKSECRETKEY'),
 }
 
-if (!storage.SDKAPPID || !storage.SDKSECRETKEY) {
-  const SDKAPPID = prompt('SDKAPPID')
-  const SDKSECRETKEY = prompt('SDKSECRETKEY')
-  if (SDKAPPID && SDKSECRETKEY) {
-    storage.SDKAPPID = Number(SDKAPPID)
-    storage.SDKSECRETKEY = SDKSECRETKEY
-    localStorage.setItem('SDKAPPID', storage.SDKAPPID)
-    localStorage.setItem('SDKSECRETKEY', storage.SDKSECRETKEY)
-  }
-}
+// if (!storage.SDKAPPID || !storage.SDKSECRETKEY) {
+//   const SDKAPPID = prompt('SDKAPPID')
+//   const SDKSECRETKEY = prompt('SDKSECRETKEY')
+//   if (SDKAPPID && SDKSECRETKEY) {
+//     storage.SDKAPPID = Number(SDKAPPID)
+//     storage.SDKSECRETKEY = SDKSECRETKEY
+//     localStorage.setItem('SDKAPPID', storage.SDKAPPID)
+//     localStorage.setItem('SDKSECRETKEY', storage.SDKSECRETKEY)
+//   }
+// }
 
 /**
  * Tencent Cloud SDKAppId, which should be replaced with user's SDKAppId.
@@ -71,7 +71,7 @@ export const userInfo = {
 
 export function getBasicInfo() {
   if (SDKAPPID === Number(0) || SDKSECRETKEY === String('')) {
-    alert('Please configure your SDKAPPID in config/basic-info-config.js');
+    console.warn('Please configure your SDKAPPID in config/basic-info-config.js');
     return;
   }
   console.log("SDKAPPID, SDKSECRETKEY, EXPIRETIME", SDKAPPID, SDKSECRETKEY, EXPIRETIME)
