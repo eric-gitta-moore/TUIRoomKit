@@ -22,7 +22,7 @@ window.login = login
 if (!storage.SDKAPPID || !storage.SDKSECRETKEY) {
   // const SDKAPPID = prompt('SDKAPPID')
   // const SDKSECRETKEY = prompt('SDKSECRETKEY')
-  console.warn('还没有输入 id 和 key，输入 login 登录。例如 login('username', 'password')')
+  console.warn(`还没有输入 id 和 key，输入 login 登录。例如 login('username', 'password')`)
 }
 
 /**
