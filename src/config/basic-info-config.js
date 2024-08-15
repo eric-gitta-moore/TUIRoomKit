@@ -10,16 +10,20 @@ const storage = {
   SDKSECRETKEY: param['SDKSECRETKEY'] || localStorage.getItem('SDKSECRETKEY'),
 }
 
-// if (!storage.SDKAPPID || !storage.SDKSECRETKEY) {
-//   const SDKAPPID = prompt('SDKAPPID')
-//   const SDKSECRETKEY = prompt('SDKSECRETKEY')
-//   if (SDKAPPID && SDKSECRETKEY) {
-//     storage.SDKAPPID = Number(SDKAPPID)
-//     storage.SDKSECRETKEY = SDKSECRETKEY
-//     localStorage.setItem('SDKAPPID', storage.SDKAPPID)
-//     localStorage.setItem('SDKSECRETKEY', storage.SDKSECRETKEY)
-//   }
-// }
+function login(SDKAPPID, SDKSECRETKEY) {
+  if (SDKAPPID && SDKSECRETKEY) {
+    storage.SDKAPPID = Number(SDKAPPID)
+    storage.SDKSECRETKEY = SDKSECRETKEY
+    localStorage.setItem('SDKAPPID', storage.SDKAPPID)
+    localStorage.setItem('SDKSECRETKEY', storage.SDKSECRETKEY)
+  }
+}
+window.login = login
+if (!storage.SDKAPPID || !storage.SDKSECRETKEY) {
+  // const SDKAPPID = prompt('SDKAPPID')
+  // const SDKSECRETKEY = prompt('SDKSECRETKEY')
+  console.warn('还没有输入 id 和 key，输入 login 登录。例如 login('username', 'password')')
+}
 
 /**
  * Tencent Cloud SDKAppId, which should be replaced with user's SDKAppId.
