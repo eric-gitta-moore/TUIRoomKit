@@ -29,6 +29,8 @@ setTimeout(()=>{
 ---
 deprecated，发现一个更好用的，Microsoft teams，只需要咸鱼搞个家庭版就可以开不限时会议了，而且也可以 web 接入
 
+但是接入点是海外有点卡，不过可以试下 [trtc.io](https://trtc.io/demo/homepage/#/detail?scene=roomkit)
+
 ---
 
 # Quick Run of TUIRoomKit Web Demo
